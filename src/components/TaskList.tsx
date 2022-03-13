@@ -29,7 +29,14 @@ export function TaskList() {
   }
 
   function handleToggleTaskCompletion(id: number) {
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    // Change to 'true' or 'false' the field 'isComplete' for a task using an ID
+    const newTasks = tasks.map(task => task.id === id ? {
+      ...task,
+      isComplete: !task.isComplete
+    } : task)
+
+    setTasks(newTasks)
+
   }
 
   function handleRemoveTask(id: number) {
@@ -47,7 +54,7 @@ export function TaskList() {
         <div className="input-group">
           <input 
             type="text" 
-            placeholder="Add new task" 
+            placeholder="Adicionar novo todo" 
             onChange={(e) => setNewTaskTitle(e.target.value)}
             value={newTaskTitle}
           />
