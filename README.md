@@ -15,6 +15,7 @@
 
   ### 2. Installing the application
       . In your terminal run the command:
+        
         yarn install or npm install
 
   ### 3. Running tests
@@ -24,5 +25,7 @@
 
   ### 4. Running application
       . In your terminal run the command:
+        
         yarn dev or npm run dev
+      
       . In your favorite browser open the application using the url http://localhost:8080/
