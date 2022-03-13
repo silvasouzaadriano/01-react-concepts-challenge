@@ -15,7 +15,7 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState('');
 
   function handleCreateNewTask() {
-    // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+    // Create a new task with random id, validating (not allowing) if the title is empty
     if (!newTaskTitle) return;
 
     const newTask = {
@@ -33,7 +33,10 @@ export function TaskList() {
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    // Remove a task from list using ID
+
+    const filteredTasks = tasks.filter(task => task.id !== id)
+    setTasks(filteredTasks);
   }
 
   return (
